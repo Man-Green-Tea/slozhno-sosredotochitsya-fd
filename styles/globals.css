@@ -28,6 +28,10 @@ ul {
   list-style: none;
 }
 
+li {
+  text-decoration: none;
+}
+
 picture {
   margin: 0;
   padding: 0;
