@@ -9,4 +9,15 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-image: url(../images/cover-image-dark.png);
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --main-title-color: #db00ff;
+  --title-color:#ff0070;
+  --card-title-color: #000028;
+  --card-subtitle-color: #f1b2ce;
+  --card-link-accent: #ff0070;
+  --decoration-accent: #ff0070;
+  --switch-color: #ff0070;
+  --decoration-visibility: visible;
 }

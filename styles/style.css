@@ -5,6 +5,7 @@
   display: grid;
   justify-content: center;
   gap: 40px;
+  max-width: 1024px;
   height: 100vh;
   font-family: var(--font-family);
   background-color: var(--bg-color);
@@ -13,7 +14,38 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  max-width: 1024px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-auto {
+    --bg-image: url(../images/cover-image-dark.png);
+    --bg-color: #000028;
+    --accent-color: #ff0070;
+    --main-title-color: #db00ff;
+    --title-color: #ff0070;
+    --card-title-color: #000028;
+    --card-subtitle-color: #f1b2ce;
+    --card-link-accent: #ff0070;
+    --decoration-accent: #ff0070;
+    --switch-color: #ff0070;
+    --decoration-visibility: visible;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #000028;
+    --accent-color: #ff8dcb;
+    --main-title-color: #ffc2e6;
+    --title-color: #353430;
+    --card-title-color: #353430;
+    --card-subtitle-color: #353430;
+    --card-link-accent: #f1b2ce;
+    --decoration-accent: #353430;
+    --switch-color: #353430;
+    --decoration-visibility: hidden;
+  }
 }
 
 @media (width >=768) {
@@ -42,8 +74,8 @@
   right: 10px;
   width: 25px;
   height: 24px;
-  border-top: 1px solid #ff0070;
-  border-right: 1px solid #ff0070;
+  border-top: 1px solid var(--decoration-accent);
+  border-right: 1px solid var(--decoration-accent);
 }
 
 .angle__decoration::before {
@@ -53,8 +85,8 @@
   left: 10px;
   width: 24px;
   height: 25px;
-  border-bottom: 1px solid #ff0070;
-  border-left: 1px solid #ff0070;
+  border-bottom: 1px solid var(--decoration-accent);
+  border-left: 1px solid var(--decoration-accent);
 }
 
 .header__rec {
@@ -67,13 +99,14 @@
   font-size: 18px;
   line-height: 1.38889;
   text-align: right;
+  visibility: var(--decoration-visibility);
 }
 
 .header__rec::after {
   content: "";
   position: absolute;
   top: 8px;
-  right: -19px;
+  right: -21px;
   width: 9px;
   height: 9px;
   border-radius: 100%;
@@ -94,8 +127,8 @@
 
 .header__theme-menu-button {
   border: 1px solid transparent;
-  padding-inline: 13px;
-  color: #ff0070;
+  padding: 2px 13px;
+  color: var(--switch-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1;
@@ -104,39 +137,47 @@
   background: none;
 }
 
-.header__theme-menu-button:hover {
-  border-color: rgba(255, 0, 112, 0.4);
-  outline: none;
+.header__theme-menu-button_active {
+  border: 1px solid var(--switch-color);
 }
 
-.header__theme-menu-button:active {
-  border-color: #ff0070;
+.header__theme-menu-button:hover {
+  border: 0.5px solid var(--switch-color);
   outline: none;
 }
 
 .header__theme-menu-button:focus {
   outline: none;
-  border-bottom: 1px solid #ff0070;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--switch-color);
+  outline: none;
+}
+
+.header__theme-menu-button:active {
+  border-color: var(--switch-color);
+  outline: none;
 }
 
 .header__title {
+  align-self: center;
   color: var(--main-title-color);
   font-family: inherit;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
-  align-self: center;
 }
 
 .header__subtitle {
+  align-self: center;
   min-width: 355px;
   max-height: min-content;
   color: #000028;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.3;
-  align-self: center;
 }
 
 /* чтобы текст располагался как на макете */
@@ -231,24 +272,41 @@
 }
 
 .card__title {
+  color: var(--card-title-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.3;
-  color: var(--card-title-color);
 }
 
 .card__subtitle {
   color: var(--card-subtitle-color);
-  font-weight: 200;
+  font-weight: 300;
   font-size: 18px;
   line-height: 1.3;
 }
 
+.card__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--card-link-accent);
+}
+
+.card__link:hover {
+  border-bottom: 1px solid var(--card-subtitle-color);
+}
+
+.card__link:focus {
+  outline: none;
+}
+
+.card__link:focus-visible {
+  outline: 1px solid var(--card-subtitle-color);
+}
+
 .how__card-title {
+  color: var(--card-title-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.3;
-  color: var(--card-title-color);
 }
 
 .gallery {
@@ -263,9 +321,9 @@
 
 .gallery__image {
   display: block;
+  object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .gallery__item {

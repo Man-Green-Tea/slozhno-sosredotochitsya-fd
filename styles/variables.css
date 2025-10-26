@@ -11,5 +11,8 @@
   --title-color:#ff0070;
   --card-title-color: #000028;
   --card-subtitle-color: #f1b2ce;
-  --card-link-accent: #f1b2ce;;
+  --card-link-accent: #ff0070;
+  --decoration-accent: #ff0070;
+  --switch-color: #ff0070;
+  --decoration-visibility: visible;
 }
