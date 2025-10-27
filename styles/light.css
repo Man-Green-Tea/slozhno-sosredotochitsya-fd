@@ -13,11 +13,31 @@
   --bg-color: #FF8DCB;
   --accent-color: #ff8dcb;
   --main-title-color: #ffc2e6;
+  --subtitle-color: #353430;
   --title-color:#353430;
   --card-title-color: #353430;
   --card-subtitle-color: #353430;
   --card-link-accent: #f1b2ce;
   --decoration-accent: #353430;
   --switch-color: #353430;
+  --switch-hover-color: 50, 49, 45,;
   --decoration-visibility: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #FF8DCB;
+    --accent-color: #ff8dcb;
+    --main-title-color: #ffc2e6;
+    --subtitle-color: #353430;
+    --title-color: #353430;
+    --card-title-color: #353430;
+    --card-subtitle-color: #353430;
+    --card-link-accent: #f1b2ce;
+    --decoration-accent: #353430;
+    --switch-color: #353430;
+    --switch-hover-color: 50, 49, 45,;
+    --decoration-visibility: hidden;
+  }
 }
