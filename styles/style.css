@@ -341,7 +341,8 @@
   .how {
     grid-template-columns: minmax(236px, 315px) minmax(472px, max-content);
     grid-template-rows: min-content max-content;
-    gap: 20px;
+    column-gap: 20px;
+    
   }
 
   .how__card-list {
